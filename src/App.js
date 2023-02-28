@@ -3,14 +3,17 @@ import "./index.css"; // webpack이 img, css 같은 정적 파일을 로딩할 �
 
 import Todos from "./component/todos/Todos";
 import { theme } from "./style";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Container>
-        <Todos />
-      </Container>
-    </ThemeProvider>
+    <BrowserRouter basename="/todolist">
+      <ThemeProvider theme={theme}>
+        <Container>
+          <Todos />
+        </Container>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
